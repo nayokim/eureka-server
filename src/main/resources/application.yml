@@ -1,0 +1,20 @@
+#The assign port of the service or application
+server:
+  port: 8661
+
+#The name of the service or application
+spring:
+  application:
+    name: discovery-service
+
+#configuration used to register a given microservice with eureka server
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    registerWithEureka: false
+    fetchRegistry: false
+    serviceUrl:
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+    server:
+      waitTimeInMsWhenSyncEmpty: 0
